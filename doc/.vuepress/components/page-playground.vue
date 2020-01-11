@@ -10,7 +10,7 @@
       </p>
     </div>
     <div class="console-panel">
-      <pre v-for="(message, index) in messages">{{ message.value }}</pre>
+      <pre v-for="(message, index) in messages.reverse()">{{ message.value }}</pre>
     </div>
   </div>
 </template>
