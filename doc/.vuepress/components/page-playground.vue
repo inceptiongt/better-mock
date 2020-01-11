@@ -10,7 +10,7 @@
       </p>
     </div>
     <div class="console-panel">
-      <pre v-for="(message, index) in messages.reverse()">{{ message.value }}</pre>
+      <pre v-for="(message, index) in messages">{{ message.value }}</pre>
     </div>
   </div>
 </template>
@@ -74,7 +74,7 @@ export default {
       const originLog = console.log
       console.log = (...args) => {
         args.forEach(arg => {
-          this.messages.push(this.createMessage(arg))
+          this.messages.unshift(this.createMessage(arg))
         })
         originLog.call(null, ...args)
       }
